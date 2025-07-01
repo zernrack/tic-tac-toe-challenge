@@ -37,7 +37,7 @@ export function Game() {
 
     // Check if game ended and update stats
     const result = calculateWinner(nextSquares)
-    const isGameComplete = result?.winner || nextSquares.every((square) => square !== null)
+    const isGameComplete = (result !== null) || nextSquares.every((square) => square !== null)
 
     if (isGameComplete && currentMove === history.length - 1) {
       setTimeout(() => {
